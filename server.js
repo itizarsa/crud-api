@@ -268,6 +268,8 @@ app.patch("/user/:id", (req, res, next) => {
 
 		const id = Number(req["params"]["id"])
 
+		const user = users.find((elem) => elem["id"] === id)
+
 		if (!user) throw new Error("Id Not Found")
 
 		users[id - 1]["firstName"] = firstName
